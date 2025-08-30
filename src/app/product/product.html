@@ -1,0 +1,29 @@
+@if (products) {
+<h3 class="p-2">{{ title }}</h3>
+<div class="form-group p-2">
+<input class="form-control" id="productName" placeholder="Arama metninizi giriniz!" [(ngModel)]="filterText"/>
+@if (filterText) {
+    <small>Şu an <strong>{{filterText}}</strong> aradınız.</small>
+}
+</div>
+}@else {
+<div class="alert alert-primary" role="alert">Bu kategoride ürün yoktur!</div>
+
+}
+<div class="row">
+  @for (product of products | productFilter:filterText ;track product.id) {
+  <div class="col-md-3">
+    <div class="card" style="width: 18rem">
+      <img [src]="product.imageUrl" width="200" height="200" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">
+          {{ product.description }}
+        </p>
+        <b class="text-danger">{{ product.price | currency:'TRY' }}</b><br /><br />
+        <a (click)="addToCart(product)" class="btn btn-primary">Sepete Ekle +</a>
+      </div>
+    </div>
+  </div>
+  }
+</div>

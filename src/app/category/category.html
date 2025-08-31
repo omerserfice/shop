@@ -1,9 +1,22 @@
-<h3 class="p-2">{{title}}</h3>
+<h3 class="p-2">{{ title }}</h3>
 <div class="list-group">
-    <a class="list-group-item active">Tüm Ürünler</a>
+  <a class="list-group-item active" routerLink="/products">Tüm Ürünler</a>
 </div>
-@for (category of categories; track category.id) {
-<div class="list-group">
-    <a class="list-group-item">{{category.name}}</a>
-</div>
-}
+
+<ul class="nav flex-column">
+  @for (category of categories; track category.id) {
+  <li class="nav-item">
+    <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
+      routerLink="products/category/{{ category.id }}">{{ category.name }}</a>
+  </li>
+  }
+<hr>
+  <li class="nav-item">
+    <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
+      routerLink="/product-add-1">Ürün Ekle /Klasik Form</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
+      routerLink="/product-add-2">Ürün Ekle /Reactive Form</a>
+  </li>
+</ul>

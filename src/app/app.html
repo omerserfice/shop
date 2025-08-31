@@ -1,11 +1,37 @@
-<app-nav></app-nav>
-<div class="row">
-  <div class="col-md-2">
-  <app-category></app-category>
-</div>
-<div class="col-md-10">
-  <app-product></app-product>
-</div>
-</div>
-
-<router-outlet />
+<body>
+  <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">Shopping</a>
+  </header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+        <div
+          class="offcanvas-md offcanvas-end bg-body-tertiary"
+          tabindex="-1"
+          id="sidebarMenu"
+          aria-labelledby="sidebarMenuLabel"
+        >
+       
+          <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
+            <app-category></app-category>
+          </div>
+        </div>
+      </div>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <router-outlet />
+      </main>
+    </div>
+  </div>
+  <script
+    src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    class="astro-vvvwv3sm"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"
+    integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp"
+    crossorigin="anonymous"
+    class="astro-vvvwv3sm"
+  ></script>
+  <script src="dashboard.js" class="astro-vvvwv3sm"></script>
+</body>

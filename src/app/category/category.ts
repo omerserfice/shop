@@ -2,9 +2,11 @@ import { Component, inject } from '@angular/core';
 import { Category } from './category.model';
 import { CategoryService } from '../services/category';
 import { Alertify } from '../services/alertify';
+import { RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-category',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './category.html',
   styleUrl: './category.css',
   providers : [CategoryService]

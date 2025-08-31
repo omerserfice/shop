@@ -6,6 +6,8 @@ import { ProductComponent } from "./product/product";
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 
+
+
 export const appConfig : ApplicationConfig = {
   providers : [
     provideHttpClient(),
